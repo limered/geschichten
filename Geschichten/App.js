@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import Header from './views/Header';
+import { MessageHeader } from './app/components/Header/index';
 import Content from './views/Content';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <StatusBar hidden={true}/>
-        <Header/>
+        <MessageHeader/>
         <Content/>
       </View>
     );
