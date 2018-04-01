@@ -3,19 +3,20 @@ import {StyleSheet} from 'react-native';
 export default styles = StyleSheet.create({
     button:{
         width:'90%',
-        height:'15%'
+        height:'15%',
+        marginTop:20
     },
     buttonContainer:{
-        backgroundColor:'limegreen',
+        backgroundColor:'red',
         alignItems:'center',
         justifyContent:'center',
         borderRadius:5
     },
     buttonText:{
         fontWeight: '600',
-        fontSize: 60,
+        fontSize: 30,
         padding: 10,
         textAlign:'center',
-        color:'white',
+        color:'#eee',
     }
 })

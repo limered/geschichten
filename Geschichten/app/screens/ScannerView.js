@@ -3,6 +3,7 @@ import { View, StatusBar, StyleSheet } from 'react-native';
 
 import { MessageHeader } from './../components/Header/index';
 import { StartButton } from './../components/StartButton/index';
+import { StopButton } from './../components/StopButton/index';
 import StateContext from './../services/stateContext';
 
 export default class ScannerView extends React.Component{
@@ -19,6 +20,9 @@ export default class ScannerView extends React.Component{
     stopPressed(){
         this.state.context.goToDefault();
     }
+    scannedQR(){
+        this.state.context.goToPlaying();
+    }
 
     render(){
         return (
@@ -26,6 +30,7 @@ export default class ScannerView extends React.Component{
                 <StatusBar hidden={true}/>
                 <MessageHeader state={ this.state.context.currentState }/>
                 <StartButton activate={ this.startPressed.bind(this) }/> 
+                <StopButton activate={ this.stopPressed.bind(this) }/> 
             </View>
         )
     }
