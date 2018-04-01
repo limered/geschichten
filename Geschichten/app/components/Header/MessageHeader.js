@@ -6,8 +6,8 @@ import styles from './styles';
 export default class MessageHeader extends React.Component {
     render(){
         return (
-            <View style={styles.messageheader}>
-                <Text style={styles.messageText}>Suche ein Bildchen</Text>
+            <View style={styles.messageheader}> 
+                <Text style={styles.messageText}>{this.props.state.titleText}</Text>
             </View>
         );
     }

@@ -2,13 +2,21 @@ import React from 'react';
 import { View, StatusBar, StyleSheet } from 'react-native';
 
 import { MessageHeader } from './../components/Header/index';
+import StateContext from './../services/stateContext';
 
 export default class ScannerView extends React.Component{
+    stateContext;
+    constructor(props){
+        super(props);
+        this.state = { context: new StateContext() };
+        this.state.context.onStateChanged = ()=>{this.setState(this.state);}
+    }
+
     render(){
         return (
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
-                <MessageHeader/>
+                <MessageHeader state={ this.state.context.currentState }/>
             </View>
         )
     }
