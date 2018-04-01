@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StatusBar, StyleSheet } from 'react-native';
 
 import { MessageHeader } from './../components/Header/index';
+import { StartButton } from './../components/StartButton/index';
 import StateContext from './../services/stateContext';
 
 export default class ScannerView extends React.Component{
@@ -17,6 +18,7 @@ export default class ScannerView extends React.Component{
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
                 <MessageHeader state={ this.state.context.currentState }/>
+                <StartButton/>
             </View>
         )
     }
@@ -28,6 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    alignContent: 'stretch'
+    alignContent: 'stretch',
+    alignItems:'center'
   }
 });
