@@ -6,11 +6,18 @@ import { StartButton } from './../components/StartButton/index';
 import StateContext from './../services/stateContext';
 
 export default class ScannerView extends React.Component{
-    stateContext;
     constructor(props){
         super(props);
-        this.state = { context: new StateContext() };
-        this.state.context.onStateChanged = ()=>{this.setState(this.state);}
+        this.state = { 
+            context: new StateContext()
+        };
+        this.state.context.onStateChanged = this.setState.bind(this, this.state);
+    }
+    startPressed(){
+        this.state.context.goToScanning();
+    }
+    stopPressed(){
+        this.state.context.goToDefault();
     }
 
     render(){
@@ -18,7 +25,7 @@ export default class ScannerView extends React.Component{
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
                 <MessageHeader state={ this.state.context.currentState }/>
-                <StartButton/>
+                <StartButton activate={ this.startPressed.bind(this) }/> 
             </View>
         )
     }
