@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StatusBar, StyleSheet } from 'react-native';
 
 import { MessageHeader } from './../components/Header/index';
+import { Scanner } from './../components/Scanner/index';
 import { StartButton } from './../components/StartButton/index';
 import { StopButton } from './../components/StopButton/index';
 import StateContext from './../services/stateContext';
@@ -29,6 +30,7 @@ export default class ScannerView extends React.Component{
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
                 <MessageHeader state={ this.state.context.currentState }/>
+                <Scanner/>
                 <StartButton activate={ this.startPressed.bind(this) }/> 
                 <StopButton activate={ this.stopPressed.bind(this) }/> 
             </View>

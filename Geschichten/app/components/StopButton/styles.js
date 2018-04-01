@@ -4,7 +4,7 @@ export default styles = StyleSheet.create({
     button:{
         width:'90%',
         height:'15%',
-        marginTop:20
+        marginTop:15
     },
     buttonContainer:{
         backgroundColor:'red',
