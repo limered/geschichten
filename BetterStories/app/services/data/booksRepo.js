@@ -4,19 +4,18 @@ export default class BookRepository{
     soundFiles = {};
     loader;
 
+    hasPathForKey(key){
+        return this.soundFiles.hasOwnProperty(key);
+    }
+
     getAudioPath(key){
-        try{
-            return this.soundFiles[key];
-        }catch(e){
-            return "";
-        }
+        return this.soundFiles[key];
     }
 
     async load(){
         this.loader = new DataLoader();
         let files = await this.loader.getFileList();
-        files.forEach(book => {
-            book.forEach(item=>{
+        files.forEach(book => { book.forEach(item=>{
                 this.soundFiles[item.name] = item.path;
             });
         });

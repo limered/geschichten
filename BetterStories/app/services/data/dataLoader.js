@@ -10,14 +10,12 @@ export default class DataLoader{
     }
 }
 
-/* 
-[{
-ctime:null,
-mtime:Date,
-name:string,
-path:/storage/emulated/0/Android/data/com.betterstories/files/buch,
-size:?
-},{
-...
-}]
-*/
+// [{
+// ctime:null,
+// mtime:Date,
+// name:string,
+// path:/storage/emulated/0/Android/data/com.betterstories/files/buch,
+// size:?
+// },{
+// ...
+// }]
