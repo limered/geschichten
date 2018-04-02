@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Dimensions, StyleSheet, Image } from 'react-native';
-// import { BarCodeScanner } from 'expo';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 import styles from './styles';

@@ -1,14 +1,25 @@
 import DataLoader from './dataLoader';
 
-class BookRepository{
-    books = {}; // { key:string, value:string }
+export default class BookRepository{
+    soundFiles = {};
     loader;
 
-    getAudio(key){
-        return this.books[key];
+    getAudioPath(key){
+        try{
+            return this.soundFiles[key];
+        }catch(e){
+            return "";
+        }
     }
 
-    load(){
-        loader = new DataLoader();
+    async load(){
+        this.loader = new DataLoader();
+        let files = await this.loader.getFileList();
+        files.forEach(book => {
+            book.forEach(item=>{
+                this.soundFiles[item.name] = item.path;
+            });
+        });
+        console.warn(this.soundFiles);
     }
 }
