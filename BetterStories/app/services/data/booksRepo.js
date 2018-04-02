@@ -1,6 +1,6 @@
 import DataLoader from './dataLoader';
 
-export default class BookRepository{
+class BookRepository{
     soundFiles = {};
     loader;
 
@@ -19,6 +19,9 @@ export default class BookRepository{
                 this.soundFiles[item.name] = item.path;
             });
         });
-        console.warn(this.soundFiles);
+        // console.warn(this.soundFiles);
     }
 }
+
+const repo = new BookRepository();
+export default bookRepository = repo;

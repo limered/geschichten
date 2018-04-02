@@ -8,6 +8,7 @@ import { StopButton } from './../components/StopButton/index';
 import StateContext from './../services/stateContext';
 
 import scannerController from "./../services/scanner/ScannerController";
+import bookRepository from './../services/data/booksRepo';
 
 export default class ScannerView extends React.Component{
     constructor(props){
@@ -16,7 +17,6 @@ export default class ScannerView extends React.Component{
             context: new StateContext()
         };
         this.state.context.onStateChanged = this.setState.bind(this, this.state);
-        scannerController.codeScanned = this.scannedQR.bind(this);
     }
     startPressed(){
         this.state.context.goToScanning();
@@ -32,7 +32,9 @@ export default class ScannerView extends React.Component{
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
                 <MessageHeader state={ this.state.context.currentState }/>
-                <Scanner state={ this.state.context.currentState }/>
+                <Scanner 
+                    state={ this.state.context.currentState } 
+                    onScanned={this.scannedQR.bind(this)}/>
                 <StartButton activate={ this.startPressed.bind(this) }/> 
                 <StopButton activate={ this.stopPressed.bind(this) }/> 
             </View>
