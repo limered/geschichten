@@ -10,8 +10,8 @@ export default class App extends React.Component {
   constructor(props){
     super(props);
     scannerController.requestPermissions();
-    let loader = new DataLoader();
-    loader.getFileList();
+    // let loader = new DataLoader();
+    // loader.getFileList();
   }
   render() {
     return (
