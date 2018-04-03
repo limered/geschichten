@@ -1,10 +1,14 @@
 import Playing from './playing';
 import Default from './default';
 
+import scannerController from './../scanner/ScannerController';
+
 export default class Scanning{
     name = 'scanning';
     titleText = 'Suche ein Bildchen!';
-    enter(){}
+    enter(){
+        scannerController.lastScannedText = '';
+    }
     leave(){}
     goToDefault(context){
         context.currentState = new Default();
