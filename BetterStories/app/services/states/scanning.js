@@ -4,6 +4,8 @@ import Default from './default';
 export default class Scanning{
     name = 'scanning';
     titleText = 'Suche ein Bildchen!';
+    enter(){}
+    leave(){}
     goToDefault(context){
         context.currentState = new Default();
     }

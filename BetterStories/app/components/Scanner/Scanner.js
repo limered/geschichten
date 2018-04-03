@@ -9,7 +9,7 @@ import scannerController from './../../services/scanner/ScannerController';
 export default class Scanner extends React.Component{
     scanner;
     onScanned(e){
-        console.warn(e.data);
+        // console.warn(e.data);
         scannerController.lastScannedText = e.data;
         if(bookRepository.hasPathForKey(e.data)){
             this.props.onScanned();
