@@ -19,7 +19,6 @@ class BookRepository{
                 this.soundFiles[item.name] = item.path;
             });
         });
-        // console.warn(this.soundFiles);
     }
 }
 
